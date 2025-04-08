@@ -1,0 +1,194 @@
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  font-size: 175%;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url('https://wallpapercave.com/wp/wp2150006.png') no-repeat;
+  background-size: cover;
+}
+
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  outline: none;
+  appearance: none;
+  text-align: left;
+}
+
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.calculator {
+  border-radius: 12px;
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  max-width: 15em;
+  overflow: hidden;
+  transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.calculator:hover {
+  transform: translateY(-8px);
+  animation: shadowAnimation 3s ease forwards;
+}
+
+@keyframes shadowAnimation {
+  from {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  to {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.6);
+  }
+}
+
+.calculator__display {
+  background-color: #222222;
+  color: #fff;
+  font-size: 1.8em;
+  padding: 28px;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.calculator__display.small-text {
+  font-size: 1.3em;
+  padding: 37px;
+}
+
+.calculator__keys {
+  background-color: #999999;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator__keys > * {
+  background-color: #fff;
+  padding: 0.5em 1.25em;
+  position: relative;
+  text-align: center;
+  flex: 1;
+  min-width: 3em;
+}
+
+.calculator__keys > *:active::before,
+.calculator__keys > .is-depressed::before {
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  box-shadow: 0 0 6px 0 rgb(0, 0, 0.5) inset;
+  content: '';
+  left: 0;
+  opacity: 0.3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.key--operator {
+  background-color: #ddd;
+}
+
+.key--equal {
+  background-image: linear-gradient(to bottom, #ffb7cf, #ff0055);
+  grid-column: -2;
+  grid-row: 2 / span 4;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+}
