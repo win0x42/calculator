@@ -35,8 +35,8 @@ calculator/
 
 ## License
 
-Name: Simon Cheong
-GitHub: https://github.com/win0x42
+- Name: Simon Cheong
+- GitHub: https://github.com/win0x42
 
 ---
 
